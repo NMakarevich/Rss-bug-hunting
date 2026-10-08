@@ -60,6 +60,7 @@ function updateCounter() {
 
 function render() {
   const visible = getVisibleTasks();
+  list.innerHTML = '';
   if (visible.length !== 0) {
     for (let i = 0; i < visible.length; i++) {
       const task = visible[i];
