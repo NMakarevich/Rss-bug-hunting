@@ -39,7 +39,19 @@ function clearCompleted() {
 }
 
 function getVisibleTasks() {
-  return tasks;
+  return tasks.filter((task) => {
+    switch (currentFilter) {
+      case "all": {
+        return task
+      }
+      case "done": {
+        return task.done
+      }
+      case 'active': {
+        return !task.done
+      }
+    }
+  });
 }
 
 function updateCounter() {
