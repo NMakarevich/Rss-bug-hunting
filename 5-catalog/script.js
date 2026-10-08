@@ -34,6 +34,7 @@ function getFiltered() {
     result.sort((a, b) => a.price - b.price);
   } else if (sort === "desc") {
     result.sort((a, b) => b.price - a.price);
+  } else {
   }
 
   return result;
@@ -48,7 +49,7 @@ function render() {
     card.innerHTML = `<h3>${p.name}</h3><p class="cat">${p.category}</p><p class="price">$${p.price}</p>`;
     grid.appendChild(card);
   });
-  countEl.textContent = products.length;
+  countEl.textContent = String(items.length);
 }
 
 render();
