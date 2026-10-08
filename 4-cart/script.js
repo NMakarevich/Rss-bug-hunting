@@ -101,7 +101,7 @@ function renderCart() {
     total = total - total * discount;
   }
 
-  badgeEl.textContent = cart.length;
+  badgeEl.textContent = cart.reduce((sum, p) => sum + p.qty, 0);
   totalEl.textContent = total;
   emptyMsg.hidden = true;
 }
